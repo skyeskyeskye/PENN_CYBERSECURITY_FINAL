@@ -10,11 +10,11 @@ First, run `netdiscover -r 192.168.1.255/16`. This shows all of the machines on 
 
 ![netdiscover](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/netdiscover_picture_redteam.jpg)
 
-After reconnaisance, http://192.168.1.110 is a wordpress site. This is our target.
+After reconnaisance, http://192.168.1.110 is found to be a wordpress site. This is our target.
 
 ![Wordpress](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/wordpress_website_image_redteam.jpg)
 
-Nmap scan 'sudo nmap 192.168.1.110` results reveal the below services and OS details:
+Nmap scan `sudo nmap 192.168.1.110` results reveal the below services and OS details:
 
 ![nmap](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/nmap_scan_redteam.jpg)
 
