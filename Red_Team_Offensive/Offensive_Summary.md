@@ -6,19 +6,30 @@
 - Exploitation
 
 ### Exposed Services
-_TODO: Fill out the information below._
+First, run `netdiscover -r 192.168.1.255/16`. This shows all of the machines on the network:
 
-Nmap scan results for each machine reveal the below services and OS details:
+![netdiscover](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/netdiscover_picture_redteam.jpg)
 
-```bash
-$ nmap ... # TODO: Add command to Scan Target 1
-  # TODO: Insert scan output
-```
+After reconnaisance, http://192.168.1.110 is a wordpress site. This is our target.
+
+![Wordpress](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/wordpress_website_image_redteam.jpg)
+
+Nmap scan 'sudo nmap 192.168.1.110` results reveal the below services and OS details:
+
+![nmap](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/nmap_scan_redteam.jpg)
 
 This scan identifies the services below as potential points of entry:
 - Target 1
-  - List of
-  - Exposed Services
+  - SSH, port 22
+  - HTTP, port 80
+  - RPC Bind, port 111
+  - Netbios SSN, port 139
+  - Microsoft-DS, port 445
+
+Next, a vulnerability scan reveals many exploit options with the open ports:
+
+`nmap -sV --script vul 192.168.1.110`
+
 
 _TODO: Fill out the list below. Include severity, and CVE numbers, if possible._
 
