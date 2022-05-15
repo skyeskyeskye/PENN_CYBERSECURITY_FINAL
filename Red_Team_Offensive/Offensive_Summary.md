@@ -60,7 +60,11 @@ Directed to the config file for wordpress, we located and viewed wp-config.php f
 
 ![configfind](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/Finding_wpconfig_redteam.jpg)
 
-On the way to that file, and using `grep -R ./ -e flag*` I found the first flag:
+On the way to that file, the second flag was found:
+
+![flag2](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/Flag2_redteam.jpg)
+
+and using `grep -R ./ -e flag*` found the first flag:
 
 ![flag1](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/flag1_Redteam.jpg)
 
@@ -84,7 +88,7 @@ Run `show tables;` to see data we can inspect to try to find the flags.
 
 ![sql3](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/mysql_3_redteam.jpg)
 
-Here, we can inspect the data inside these tables using `select * from <table name>;`. By doing this and inspecting several tables another 2 flags were found:
+Here, we can inspect the data inside these tables using `select * from <table name>;`. By doing this and inspecting several tables another 2 flags (flags 3 and 4) were found:
 
 `select * wp_posts;`:
 
@@ -101,22 +105,18 @@ Using the hashed credentials saved to a .txt file and running that file through 
 ![johntheripper](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/JohnCrackedHash_and_Ssh_as_root_redteam.jpg)
 
 Then sign in as steven using ssh and the password cracked by running John:
-`ssh steven@192.168.1.110` and enter the password "pink1984"
+`ssh steven@192.168.1.110` and enter the password "pink84"
 
 Running `sudo -l` as steven shows he doesn't need a password to access python. This can be exploited to escalate to root privileges by running:
 `sudo python -c 'import pty;pty.spawn("bin/bash");'`
 
 ![escalatetoroot](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/Escalate_root_redteam_steven_python.jpg)
 
+Now, with access to the root directory the fourth flag was found, again:
+
+![flag4](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/flag4_redteam.jpg)
 
 
-The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
-- Target 1
-  - `flag1.txt`: _TODO: Insert `flag1.txt` hash value_
-    - **Exploit Used**
-      - _TODO: Identify the exploit used_
-      - _TODO: Include the command run_
-  - `flag2.txt`: _TODO: Insert `flag2.txt` hash value_
-    - **Exploit Used**
-      - _TODO: Identify the exploit used_
-      - _TODO: Include the command run_
+The Red Team was able to penetrate `Target 1` and retrieve the following confidential data for the four 'flags'
+
+
