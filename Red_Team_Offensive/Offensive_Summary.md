@@ -60,10 +60,12 @@ Directed to the config file for wordpress, we located and viewed wp-config.php f
 
 ![configfind](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/Finding_wpconfig_redteam.jpg)
 
-On the way to that file, I saw the first flag:
+On the way to that file, and using `grep -R ./ -e flag*` I found the first flag:
+
 ![flag1](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/flag1_Redteam.jpg)
 
 Running `nano wp-config.php` revealed:
+
 ![wpconfig1](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/WPConfig1_redteam.jpg)
 
 Here we see the credentials for the user "root" with the password of "R@v3nSecurity"
@@ -73,11 +75,13 @@ Next, run `mysql -u root -p` and type in R@v3nSecurity as the password when prom
 ![sql1](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/mysql_1_redteam.jpg)
 
 Then checking what databases are available, run `show databases;`
+
 ![sql2](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/mysql_2_redteam.jpg)
 
 Then selecting wordpress as the database to use, run `use wordpress;`
 
 Run `show tables;` to see data we can inspect to try to find the flags.
+
 ![sql3](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/mysql_3_redteam.jpg)
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
