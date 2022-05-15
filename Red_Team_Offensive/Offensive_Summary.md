@@ -117,6 +117,12 @@ Now, with access to the root directory the fourth flag was found, again:
 ![flag4](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/flag4_redteam.jpg)
 
 
-The Red Team was able to penetrate `Target 1` and retrieve the following confidential data for the four 'flags'
+The Red Team was able to penetrate the Raven Security Target Machine and retrieve the following confidential data for the four 'flags':
 
+| Flag  | Hash |
+| ------------- | ------------- |
+| 1  | b9bbcb33e11b80be759c4e844862482d  |
+| 2  | fc3fd58dcdad9ab23faca6e9a36e581c  |
+| 3  | afc01ab56b50591e7dccf93122770cd2  |
+| 4  | 715dea6c055b9fe3337544932f2941ce  |
 
