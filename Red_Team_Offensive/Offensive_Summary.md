@@ -29,7 +29,11 @@ This scan identifies the services below as potential points of entry:
 Next, a vulnerability scan reveals many exploit options with the open ports:
 
 `nmap -sV --script vul 192.168.1.110`
-ADD SCREENSHOTS HERE AFTER GETTING THEM OFF OF REMOTE DESKTOP
+
+![nmapvulnvid](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/nmapvulnscan1.jpg)
+
+A video of the entire output from the vulnerability scan can be seen here: https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/nmap_vulnerability_scan_redteam.mp4
+
 
 _TODO: Fill out the list below. Include severity, and CVE numbers, if possible._
 
