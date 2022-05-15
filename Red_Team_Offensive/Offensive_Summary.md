@@ -29,11 +29,11 @@ This scan identifies the services below as potential points of entry:
 Next, a vulnerability scan reveals many exploit options with the open ports:
 
 `nmap -sV --script vul 192.168.1.110`
-
+ADD SCREENSHOTS HERE AFTER GETTING THEM OFF OF REMOTE DESKTOP
 
 _TODO: Fill out the list below. Include severity, and CVE numbers, if possible._
 
-The following vulnerabilities were identified on each target:
+FILL THIS BASED ON THE SCAN! The following vulnerabilities were identified on each target:
 - Target 1
   - List of
   - Critical
@@ -41,8 +41,17 @@ The following vulnerabilities were identified on each target:
 
 _TODO: Include vulnerability scan results to prove the identified vulnerabilities._
 
+Using wpscan against the target-- `wpscan --url http://192.168.1.110/wordpress --enumerate u`, we find two distinct users: 'michael' and 'steven'.
+
+![wpscan1](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/wpscan_redteam_1.jpg)
+![wpscan2](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/wpscan_redteam_2.jpg)
+
+
 ### Exploitation
-_TODO: Fill out the details below. Include screenshots where possible._
+Now that ssh is open and we have enumerated users, we can try to access the target by brute force.  This can be done using an application like hydra, but fortunately, we guessed the password on the third attempt. Running `ssh michael@192.168.1.110` and the password "michael" granted access to the target.
+
+![ssh](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/SSH_as_Michael_redteam.jpg)
+
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 - Target 1
