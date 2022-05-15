@@ -42,6 +42,13 @@ FILL THIS BASED ON THE SCAN! The following vulnerabilities were identified on ea
   - List of
   - Critical
   - Vulnerabilities
+ | CVE | Port Used | Description | Severity  | Link for more information |
+|---|---|---|---|---|
+| CVE-2015-5600  |  SSH  | Unrestricted access allows brute force attacks and high CPU usage (Denial of Service)  |CVSS v2 Score 8.5 "High" but awaiting reevaluation  | https://nvd.nist.gov/vuln/detail/CVE-2015-5600  |
+|   |   |   |   |   |
+|   |   |   |   |   |
+ Select Vulnerabilities on the Raven Security Target Machine:
+ 
 
 _TODO: Include vulnerability scan results to prove the identified vulnerabilities._
 
