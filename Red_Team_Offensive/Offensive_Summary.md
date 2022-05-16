@@ -63,7 +63,7 @@ Using wpscan against the target-- `wpscan --url http://192.168.1.110/wordpress -
 
 
 ### Exploitation
-Now that ssh is open and we have enumerated users, we can try to access the target by brute force.  This can be done using an application like hydra, but fortunately, we guessed the password on the third attempt. Running `ssh michael@192.168.1.110` and the password "michael" granted access to the target.
+Now that ssh is open and we have enumerated users, we can try to access the target by brute force.  This can be done using a brute force application like WPScan (Example: `wpscan --url http://test.local/ --passwords passwords.txt`), but fortunately, we guessed the password on the third attempt. Running `ssh michael@192.168.1.110` and the password "michael" granted access to the target.
 
 ![ssh](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/SSH_as_Michael_redteam.jpg)
 
