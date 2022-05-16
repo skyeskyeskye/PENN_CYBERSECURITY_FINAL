@@ -43,12 +43,13 @@ FILL THIS BASED ON THE SCAN! The following vulnerabilities were identified on ea
   - Critical
   - Vulnerabilities
 
-| Vulnerability | CVE | Port Used | Description | Severity  | Link for more information |
+| Vulnerability | CVE | Port Used |   Description   | Severity|Link for more information|
 |---|---|---|---|---|---|
 | Open SSH | CVE-2015-5600  |  SSH  | Unrestricted access allows brute force attacks and high CPU usage (Denial of Service)  |CVSS v2 Score 8.5 "High" but awaiting reevaluation  | https://nvd.nist.gov/vuln/detail/CVE-2015-5600  |
 | Python Privileges |   | SSH  | User steven had privileges to run python. This is exploitable using a python bash shell (PTY Shell) to escalate steven's privileges to root | High  | https://docs.python.org/2/library/pty.html  |
-| Weak Passwords and Unsalted Password Hashes |   |   |   |   |   |
-| WPScan | | | | | |
+| Weak Passwords and Unsalted Password Hashes |   | SSH and HTTP | Using weak passwords that are unsalted and breakable with software like John the Ripper gives easy access to external parties. | High  |  https://github.com/openwall/john |
+| Username Enumeration Not Disabled | | SSH | WPScan was able to determine usernames through a brute force scan |High| |
+|MySQL Access| | SSH | Access to MYSQL allowed the attackers to view the database and directory content. SQL Injections have potential to execute SQL commands that create, retrieve, update, and delete data in the database. |High| |
  
  Select Vulnerabilities on the Raven Security Target Machine:
  
