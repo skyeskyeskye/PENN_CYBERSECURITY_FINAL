@@ -34,14 +34,7 @@ Next, a vulnerability scan reveals many exploit options with the open ports:
 
 A video of the entire output from the vulnerability scan can be seen here: https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/nmap_vulnerability_scan_redteam.mp4
 
-
-_TODO: Fill out the list below. Include severity, and CVE numbers, if possible._
-
-FILL THIS BASED ON THE SCAN! The following vulnerabilities were identified on each target:
-- Target 1
-  - List of
-  - Critical
-  - Vulnerabilities
+This nmap scan revealed many more vulnerabilities associated with the wordpress site, however we only needed to use a few exploits to find the flags:
 
 | Vulnerability | CVE | Port Used |   Description   | Severity|Link for more information|
 |---|---|---|---|---|---|
@@ -50,11 +43,7 @@ FILL THIS BASED ON THE SCAN! The following vulnerabilities were identified on ea
 | Weak Passwords and Unsalted Password Hashes |   | SSH and HTTP | Using weak passwords that are unsalted and breakable with software like John the Ripper gives easy access to external parties. | High  |  https://github.com/openwall/john |
 | Username Enumeration Not Disabled | | SSH | WPScan was able to determine usernames through a brute force scan |High| |
 |MySQL Access| | SSH | Access to MYSQL allowed the attackers to view the database and directory content. SQL Injections have potential to execute SQL commands that create, retrieve, update, and delete data in the database. |High| |
- 
- Select Vulnerabilities on the Raven Security Target Machine:
- 
 
-_TODO: Include vulnerability scan results to prove the identified vulnerabilities._
 
 Using wpscan against the target-- `wpscan --url http://192.168.1.110/wordpress --enumerate u`, we find two distinct users: 'michael' and 'steven'.
 
