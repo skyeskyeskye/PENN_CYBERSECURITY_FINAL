@@ -34,7 +34,7 @@ Next, a vulnerability scan reveals many exploit options with the open ports:
 
 A video of the entire output from the vulnerability scan can be seen here: https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/nmap_vulnerability_scan_redteam.mp4
 
-This nmap scan revealed many more vulnerabilities associated with the wordpress site, however we only needed to use a few exploits to find the flags:
+This nmap scan revealed many more vulnerabilities associated with the wordpress site, however only a few exploits were necessary to find the flags:
 
 | Vulnerability | CVE | Port Used |   Description   | Severity|Link for more information|
 |---|---|---|---|---|---|
