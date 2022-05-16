@@ -46,8 +46,10 @@ FILL THIS BASED ON THE SCAN! The following vulnerabilities were identified on ea
 | Vulnerability | CVE | Port Used | Description | Severity  | Link for more information |
 |---|---|---|---|---|---|
 | Open SSH | CVE-2015-5600  |  SSH  | Unrestricted access allows brute force attacks and high CPU usage (Denial of Service)  |CVSS v2 Score 8.5 "High" but awaiting reevaluation  | https://nvd.nist.gov/vuln/detail/CVE-2015-5600  |
-| |   |   |   |   |   |
-| |   |   |   |   |   |
+| Python Privileges |   | SSH  | User steven had privileges to run python. This is exploitable using a python bash shell (PTY Shell) to escalate steven's privileges to root | High  | https://docs.python.org/2/library/pty.html  |
+| Weak Passwords and Unsalted Password Hashes |   |   |   |   |   |
+| WPScan | | | | | |
+ 
  Select Vulnerabilities on the Raven Security Target Machine:
  
 
@@ -115,8 +117,8 @@ Using the hashed credentials saved to a .txt file and running that file through 
 Then sign in as steven using ssh and the password cracked by running John:
 `ssh steven@192.168.1.110` and enter the password "pink84"
 
-Running `sudo -l` as steven shows he doesn't need a password to access python. This can be exploited to escalate to root privileges by running:
-`sudo python -c 'import pty;pty.spawn("bin/bash");'`
+Running `sudo -l` as steven shows the privilege to run python. This can be exploited to escalate to root privileges by running:
+`sudo python -c 'import pty;pty.spawn("bin/bash");'` This python code spawns a new bash shell to allow root privileges.
 
 ![escalatetoroot](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Red_Team_Offensive/Images/Escalate_root_redteam_steven_python.jpg)
 
