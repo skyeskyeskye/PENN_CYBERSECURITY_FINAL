@@ -17,8 +17,8 @@ The following machines were identified on the network:
   - **Purpose:** Acts as the Remote Desktop Host
   - **IP:** 
 - Target 1
-  - **Operating System:** Windows?
-  - **Purpose:** Wordpress Site
+  - **Operating System:** Linux
+  - **Purpose:** Apache Webserver running a Wordpress Site
   - **IP Address:** 192.168.1.110/24
 - Kali 
   - **Operating System:** Linux
@@ -45,25 +45,36 @@ Traffic to these services should be carefully monitored. To this end, we have im
 
 #### Alert 1: Excessive HTTP Errors
 
+![HTTPErrorsAlert](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/ExcessiveHTTPErrors_Kibana.jpg)
+    {Note: This screenshot was taken pre-attack}
+
 Alert 1 is implemented as follows:
   - **Metric**: http.response.status_code
   - **Threshold**: above 400
   - **Vulnerability Mitigated**: Brute Force Attempts (through SSH) that result in excessive amount of error codes
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+  - **Reliability**: Medium- while the baseline came from previous traffic experience, there can be times where there is more traffic to the webserver with codes over 400 just as a fluke and not indicative of an attack.
 
 #### Alert 2: HTTP Request Size Monitor
+
+![HTTPRequestSize](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/HTTPRequestSize_Kibana.jpg)
+    {Note: This screenshot was taken pre-attack}
+
 Alert 2 is implemented as follows:
   - **Metric**: http.request.bytes
   - **Threshold**: when the sum over all documents is above 3500 for the last minute
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+  - **Vulnerability Mitigated**: HTTP Request Smuggling
+  - **Reliability**: Medium- there can be triggers over the baseline because there isn't enough data collected (yet) to know what the best baseline is. (Trigger might need to b adjusted higher or lower to be more reliable.)
 
 #### Alert 3: CPU Usage Monitor
+
+![CPUUsageAlert](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/CPUUsageMonitor_Kibana.jpg)
+    {Note: this screenshot was taken pre-attack}
+
 Alert 3 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+  - **Metric**: system.process.cpu.pct 
+  - **Threshold**: when max over all documents is above 0.5 for the last 5 minutes
+  - **Vulnerability Mitigated**: Denial of Service, Brute Force, Malicious Software
+  - **Reliability**: Medium- any unexpected spike in CPU usage should be assessed to verify the reason for such an increase in usage. The reason can be a nefarious attack, but other reasons can be update installations, outdated indexes that are not optimized, changes to third party applications, etc. 
 
 _TODO Note: Explain at least 3 alerts. Add more if time allows._
 
