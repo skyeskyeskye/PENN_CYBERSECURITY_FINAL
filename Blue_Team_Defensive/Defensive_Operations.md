@@ -52,7 +52,7 @@ Alert 1 is implemented as follows:
   - **Metric**: http.response.status_code
   - **Threshold**: above 400
   - **Vulnerability Mitigated**: Brute Force Attempts (through SSH) that result in excessive amount of error codes
-  - **Reliability**: Medium- while the baseline came from previous traffic experience, there can be times where there is more traffic to the webserver with codes over 400 just as a fluke and not indicative of an attack.
+  - **Reliability**: High- however, it should be noted, while the baseline came from previous traffic experience, there can be times where there is more traffic to the webserver with codes over 400 just as a fluke and not indicative of an attack.
 
 #### Alert 2: HTTP Request Size Monitor
 
@@ -63,7 +63,7 @@ Alert 2 is implemented as follows:
   - **Metric**: http.request.bytes
   - **Threshold**: when the sum over all documents is above 3500 for the last minute
   - **Vulnerability Mitigated**: HTTP Request Smuggling
-  - **Reliability**: Medium- there can be triggers over the baseline because there isn't enough data collected (yet) to know what the best baseline is. (Trigger might need to b adjusted higher or lower to be more reliable.)
+  - **Reliability**: Medium- there can be triggers over the baseline because there isn't enough data collected (yet) to know what the best baseline is. For example, there might be times when there is a legitimate, work-related reason to have an increase in http.request.bytes. (Trigger might need to be adjusted higher or lower over time to be more reliable.)
 
 #### Alert 3: CPU Usage Monitor
 
