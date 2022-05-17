@@ -62,7 +62,7 @@ Alert 1 is implemented as follows:
 Alert 2 is implemented as follows:
   - **Metric**: http.request.bytes
   - **Threshold**: when the sum over all documents is above 3500 for the last minute
-  - **Vulnerability Mitigated**: HTTP Request Smuggling
+  - **Vulnerability Mitigated**: SQL Injection and HTTP Request Smuggling
   - **Reliability**: Medium- there can be triggers over the baseline because there isn't enough data collected (yet) to know what the best baseline is. For example, there might be times when there is a legitimate, work-related reason to have an increase in http.request.bytes. (Trigger might need to be adjusted higher or lower over time to be more reliable.)
 
 #### Alert 3: CPU Usage Monitor
@@ -83,12 +83,33 @@ _TODO_:
 - Each alert above pertains to a specific vulnerability/exploit. Recall that alerts only detect malicious behavior, but do not stop it. For each vulnerability/exploit identified by the alerts above, suggest a patch. E.g., implementing a blocklist is an effective tactic against brute-force attacks. It is not necessary to explain _how_ to implement each patch.
 
 The logs and alerts generated during the assessment suggest that this network is susceptible to several active threats, identified by the alerts above. In addition to watching for occurrences of such threats, the network should be hardened against them. The Blue Team suggests that IT implement the fixes below to protect the network:
-- Vulnerability 1
-  - **Patch**: TODO: E.g., _install `special-security-package` with `apt-get`_
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
-- Vulnerability 2
-  - **Patch**: TODO: E.g., _install `special-security-package` with `apt-get`_
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
+
+
+- Vulnerability 1: Brute Force Attacks resulting in Excessive HTTP Errors
+  - **Patch**: (1) Install a WordPress Firewall Plugin. These can be a DNS Level Website Firewall or an Application Level Firewall. (2) Make sure WordPress is up to date- Run `wp core version` to verify your current version of WordPress and then run `wp core update` to install the newest version.
+  - **Why It Works**: (1) The firewall service will filter and block bad traffic from accessing the site. (2) Having an updated WordPress installation should provide security from older known vulnerablities that have been patched in the most recent version of WordPress.
+
+
+- Vulnerability 2: Unauthorized Access to MySQL
+  - **Patch**: Secure the wp-config.php file by either (1) Using newly generated Secret Keys, (2) Moving the wp-config.php to somewhere other than the root folder of the site, or (3) Block access to the wp-config.php by creating an htacess file inside the same directory (`.htaccess` -- making sure to not have a .txt file end) then edit the file adding the code: 
+
+  `1 <files wp-config.php>
+   2 order allow,den
+   3 deny from all
+   4 </files>`
+   
+which will deny access to the config file. (source: https://webdesign.tutsplus.com/tutorials/how-to-secure-your-wordpress-wp-configphp--cms-27737)
+	
+  - **Why It Works**: By preventing access to the wp-config.php file, important and sensitive data (in our case the username: `root` and password: `R@v3nSecurity`) would not be readily available to attackers. 
+
+
 - Vulnerability 3
   - **Patch**: TODO: E.g., _install `special-security-package` with `apt-get`_
   - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
+
+
+Useful Resources:
+https://www.wpbeginner.com/wp-tutorials/how-to-protect-your-wordpress-site-from-brute-force-attacks-step-by-step/
+
+https://wpengine.com/resources/prevent-sql-injection-attack-wordpress/
+
