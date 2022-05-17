@@ -8,16 +8,14 @@
 - Suggestions for Going Further
 
 ### Network Topology
-_TODO: Fill out the information below._
-_TODO: use `nmap -sV 102.168.1.1-110` or nmap -sS IPs_of_every_machine to verify all of these from the Remote Desktop Machines.
   
 The following machines were identified on the network:
 - Azure VM
   - **Operating System:** Windows
   - **Purpose:** Acts as the Remote Desktop Host
-  - **IP:** 
+  - **IP:** 192.168.1.1
 - Target 1
-  - **Operating System:** Linux
+  - **Operating System:** Linux 3.2-4.9
   - **Purpose:** Apache Webserver running a Wordpress Site
   - **IP Address:** 192.168.1.110/24
 - Kali 
@@ -76,11 +74,25 @@ Alert 3 is implemented as follows:
   - **Vulnerability Mitigated**: Denial of Service, Brute Force, Malicious Software
   - **Reliability**: Medium- any unexpected spike in CPU usage should be assessed to verify the reason for such an increase in usage. The reason can be a nefarious attack, but other reasons can be update installations, outdated indexes that are not optimized, changes to third party applications, etc. 
 
-_TODO Note: Explain at least 3 alerts. Add more if time allows._
+This is what Kibana shows whent the index thresholds are triggered:
 
-### Suggestions for Going Further (Optional)
-_TODO_: 
-- Each alert above pertains to a specific vulnerability/exploit. Recall that alerts only detect malicious behavior, but do not stop it. For each vulnerability/exploit identified by the alerts above, suggest a patch. E.g., implementing a blocklist is an effective tactic against brute-force attacks. It is not necessary to explain _how_ to implement each patch.
+![Kibana](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Screenshot%202022-05-17%20181351.jpg)
+
+This is a closeup during the attack:
+![Kibana Close Up](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Kibana_CloseUp_Event.jpg)
+
+This is more information from an event during the attack where specifically the HTTP Request Size alert was triggered:
+
+![RequestTrigger](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Kibana_Closeup_requestbytes.jpg)
+
+This is more infromation from an event during the attack where specifically the HTTP Error alert was triggered:
+![HTTPError](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Kibana_Closeup_HTTPError.jpg)
+
+
+### Suggestions for Going Further 
+
+Each alert above pertains to a specific vulnerability/exploit. Recall that alerts only detect malicious behavior, but do not stop it. Here are some patches that could mitigate the vulnerabilities/exploits that would trigger the alerts that have been set.
+
 
 The logs and alerts generated during the assessment suggest that this network is susceptible to several active threats, identified by the alerts above. In addition to watching for occurrences of such threats, the network should be hardened against them. The Blue Team suggests that IT implement the fixes below to protect the network:
 
