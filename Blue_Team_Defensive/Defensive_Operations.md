@@ -120,7 +120,7 @@ which will deny access to the config file. (source: https://webdesign.tutsplus.c
 		
 		`}` 
 	
-   - **Why It Works**:
+   - **Why It Works**: The location, xmlrpc, being accessible can allow attackers to enumerate WordPress authors and brute force WordPress logins.  This would prevent access to that file.
 
 
 Useful Resources:
@@ -128,3 +128,4 @@ https://www.wpbeginner.com/wp-tutorials/how-to-protect-your-wordpress-site-from-
 
 https://wpengine.com/resources/prevent-sql-injection-attack-wordpress/
 
+https://shift8web.ca/2019/01/how-to-block-your-wordpress-site-from-being-scanned-by-wpscan-with-nginx/
