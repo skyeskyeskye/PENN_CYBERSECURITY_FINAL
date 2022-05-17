@@ -92,20 +92,35 @@ The logs and alerts generated during the assessment suggest that this network is
 
 - Vulnerability 2: Unauthorized Access to MySQL
   - **Patch**: Secure the wp-config.php file by either (1) Using newly generated Secret Keys, (2) Moving the wp-config.php to somewhere other than the root folder of the site, or (3) Block access to the wp-config.php by creating an htacess file inside the same directory (`.htaccess` -- making sure to not have a .txt file end) then edit the file adding the code: 
+ 
 
-  `1 <files wp-config.php>
-   2 order allow,den
-   3 deny from all
-   4 </files>`
+  `1 <files wp-config.php>` 
+  `2 order allow,den`
+  `3 deny from all`
+  `4 </files>`
+   
    
 which will deny access to the config file. (source: https://webdesign.tutsplus.com/tutorials/how-to-secure-your-wordpress-wp-configphp--cms-27737)
 	
-  - **Why It Works**: By preventing access to the wp-config.php file, important and sensitive data (in our case the username: `root` and password: `R@v3nSecurity`) would not be readily available to attackers. 
+  - **Why It Works**: These "patches" help prevent unauthorized access to the wp-config.php file. By preventing access to the wp-config.php file, important and sensitive data (in our case the username: `root` and password: `R@v3nSecurity`) would not be readily available to attackers. 
 
 
-- Vulnerability 3
-  - **Patch**: TODO: E.g., _install `special-security-package` with `apt-get`_
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
+- Vulnerability 3: Weak Passwords
+  - **Patch**: Enact a strong password policy. Particularly, make sure that passwords can not be the same as username credentials.
+  - **Why It Works**: The initial access to any of the data on the wordpress site came from easily identifying users and simply guessing one of those user's password. A strong password policy would have prevented that initial access and slowed down or stopped the attack.
+
+- Vulnerability 4: Allowing the WordPress Site to be Scanned
+   - **Patch**: Prevent WPScan from probing the site- modify NGINX configuration to block WPScan:
+ 
+		`location ^~ /xmlrpc.php {`
+			
+			`deny all;`
+		
+			`error_page 403 =404 /;`
+		
+		`}` 
+	
+   - **Why It Works**:
 
 
 Useful Resources:
