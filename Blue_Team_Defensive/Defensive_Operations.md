@@ -9,22 +9,33 @@
 
 ### Network Topology
 _TODO: Fill out the information below._
-
+_TODO: use `nmap -sV 102.168.1.1-110` or nmap -sS IPs_of_every_machine to verify all of these from the Remote Desktop Machines.
+  
 The following machines were identified on the network:
-- Name of VM 1
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
-- Name of VM 2
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
-- Etc.
+- Azure VM
+  - **Operating System:** Windows
+  - **Purpose:** Acts as the Remote Desktop Host
+  - **IP:** 
+- Target 1
+  - **Operating System:** Windows?
+  - **Purpose:** Wordpress Site
+  - **IP Address:** 192.168.1.110/24
+- Kali 
+  - **Operating System:** Linux
+  - **Purpose:** Penetration Tester VM
+  - **IP Address:** 192.168.1.90/24
+- ELK
+  - **Operating System:** Linux
+  - **Purpose:** Run ELK stack to Kibana
+  - **IP Address:** 192.168.1.100/24
+- Capstone
+  - **Operating System:** Linux
+  - **Purpose:** VM used solely for testing alerts
+  - **IP Address:** 196.168.1.105/24
 
 ### Description of Targets
-_TODO: Answer the questions below._
 
-The target of this attack was: `Target 1` (TODO: IP Address).
+The target of this attack was: `Target 1` at the IP Addresss: `192.168.1.110`.
 
 Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are possible ports of entry for attackers. As such, the following alerts have been implemented:
 
@@ -32,23 +43,22 @@ Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are pos
 
 Traffic to these services should be carefully monitored. To this end, we have implemented the alerts below:
 
-#### Name of Alert 1
-_TODO: Replace `Alert 1` with the name of the alert._
+#### Alert 1: Excessive HTTP Errors
 
 Alert 1 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
-  - **Vulnerability Mitigated**: TODO
+  - **Metric**: http.response.status_code
+  - **Threshold**: above 400
+  - **Vulnerability Mitigated**: Brute Force Attempts (through SSH) that result in excessive amount of error codes
   - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
 
-#### Name of Alert 2
+#### Alert 2: HTTP Request Size Monitor
 Alert 2 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
+  - **Metric**: http.request.bytes
+  - **Threshold**: when the sum over all documents is above 3500 for the last minute
   - **Vulnerability Mitigated**: TODO
   - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
 
-#### Name of Alert 3
+#### Alert 3: CPU Usage Monitor
 Alert 3 is implemented as follows:
   - **Metric**: TODO
   - **Threshold**: TODO
