@@ -85,7 +85,7 @@ This is more information from an event during the attack where specifically the 
 
 ![RequestTrigger](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Kibana_Closeup_requestbytes.jpg)
 
-This is more infromation from an event during the attack where specifically the HTTP Error alert was triggered:
+This is more information from an event during the attack where specifically the HTTP Error alert was triggered:
 ![HTTPError](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Kibana_Closeup_HTTPError.jpg)
 
 
