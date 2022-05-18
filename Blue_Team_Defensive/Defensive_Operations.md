@@ -107,8 +107,11 @@ The logs and alerts generated during the assessment suggest that this network is
  
 
   `1 <files wp-config.php>` 
+  
   `2 order allow,den`
+  
   `3 deny from all`
+  
   `4 </files>`
    
    
