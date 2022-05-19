@@ -54,7 +54,9 @@ Inspect your traffic to answer the following questions:
 (1) Find the following information about the infected Windows machine:
  
  Host name:   Rotterdam-PC
+ 
  IP address:  172.16.4.205
+ 
  MAC address: 00:59:07:b0:a4
  
  Source:
