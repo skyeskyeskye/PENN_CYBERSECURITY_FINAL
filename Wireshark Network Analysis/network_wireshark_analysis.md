@@ -74,7 +74,7 @@ Source: Filtering 'kerberos.CNameString' && ip.addr==172.16.4.205 then finding C
    
 172.16.4.205, 185.243.115.84, 166.64.111.64
 
-Source: This was based on the number of packets these IPs received and after assessing each IP, individually, to verify the typer of traffic.
+Source: This was based on the number of packets these IPs received and after assessing each IP, individually, to verify the type of traffic.
 
 I selected: `Wireshark-->Statistcs-->Endpoint` with the filter of `ip.addr==172.168.4.205 && http.request.method == POST`
 
