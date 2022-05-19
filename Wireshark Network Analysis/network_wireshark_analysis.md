@@ -12,7 +12,7 @@ You must inspect your traffic capture to answer the following questions:
 
 (1) What is the domain name of the users' custom site?
    
-   frank-n-ted.com
+  frank-n-ted.com
 
 Source:
 
@@ -20,7 +20,7 @@ Source:
 
 (2) What is the IP address of the Domain Controller (DC) of the AD network?
     
-    10.6.12.12
+  10.6.12.12
 
 Source:
 
@@ -35,7 +35,7 @@ Source:
  
 (4) Upload the file to VirusTotal.com. What kind of malware is this classified as?
 
-    Trojan/YAKES-- this type of malware is where the malware attempts to connect to and download from remote servers by arriving on a system unknowingly when visiting a site.
+Trojan/YAKES-- this type of malware is where the malware attempts to connect to and download from remote servers by arriving on a system unknowingly when visiting a site.
 
 ![virustotal1](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Wireshark%20Network%20Analysis/Images/Virustotal1.jpg)
 ![virustotal2](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Wireshark%20Network%20Analysis/Images/Virusttotal2.jpg)
@@ -62,7 +62,7 @@ Inspect your traffic to answer the following questions:
 
 (2) What is the username of the Windows user whose computer is infected?
 
-  matthijs.devries
+matthijs.devries
 
 Source: Filtering 'kerberos.CNameString' && ip.addr==172.16.4.205 then finding CNameString in the results and setting Wireshark to add 'CNameString' as a column.
 
@@ -70,7 +70,7 @@ Source: Filtering 'kerberos.CNameString' && ip.addr==172.16.4.205 then finding C
  
 (3) What are the IP addresses used in the actual infection traffic?
    
-   172.16.4.205, 185.243.115.84, 166.64.111.64
+172.16.4.205, 185.243.115.84, 166.64.111.64
 
 Source: This was based on the number of packets these IPs received and after assessing each IP, individually, to verify the typer of traffic.
 
