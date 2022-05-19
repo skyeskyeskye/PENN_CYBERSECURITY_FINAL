@@ -18,14 +18,23 @@ Target 2's IP Address: `192.168.1.115`
 
 2. Use Nmap to document all exposed ports and services at this IP address.
 
+![nmapSS](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Target_2/Images/2NMAPSSTARGET2.jpg)
+
 3. Enumerate the web server with `nikto`.
     - **Hint**: Run: `nikto -C all -h <URL>`
     - **Note**: This creates a list of URLs the Target HTTP server exposes. What kind of website is this VM running?
+    
+![nikto](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Target_2/Images/4NIKTOSCAN.jpg)
 
 4. Perform a more in-depth enumeration with `gobuster`.
     - **Hint**
       - Install `gobuster` using `apt`
+      
+      `sudo apt-get install gobuster`
+      
       - Run `gobuster -w /path/to/wordlist dir -u <URL>`
+      
+        
       - Use `/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt` as your wordlist (`-w`).
       - Pay attention to the `/vendor` directory. There may be a `flag` in there...
 
