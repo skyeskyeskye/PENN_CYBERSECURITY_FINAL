@@ -125,3 +125,5 @@ Source:
 
 ![bboopstills](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Wireshark%20Network%20Analysis/Images/BettyBoopImage.jpg)
 
+Useful Resources: https://unit42.paloaltonetworks.com/using-wireshark-identifying-hosts-and-users/
+
