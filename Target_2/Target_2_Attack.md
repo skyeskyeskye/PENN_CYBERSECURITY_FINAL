@@ -30,17 +30,37 @@ Target 2's IP Address: `192.168.1.115`
     - **Hint**
       - Install `gobuster` using `apt`
       
-      `sudo apt-get install gobuster`
+   ### First, run...
+   
+      `sudo apt-get update`
+     
+    ### Then run...
+            
+                 `sudo apt-get install gobuster`
       
       - Run `gobuster -w /path/to/wordlist dir -u <URL>`
-      
         
       - Use `/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt` as your wordlist (`-w`).
       - Pay attention to the `/vendor` directory. There may be a `flag` in there...
 
+### It appears that the directories available are /img, /css, /wordpress, /manual, /js, /vendor. Since I was directed to the /vendor directory, we ran this: 
+    `gobuster dir -u http://192.168.1.115/vendor -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt`
+
+Then...I started snooping around and ran gobuster against the different directories.  My goal was to get user credentials for a sign on. I ended up finding the http://192.168.1.115/wordpress/wp-admin/user directory through gobuster.  Then I GUESSED that one of the users would have the username: admin. Then I ran:
+`hydra -l admin -P /usr/share/wordlists/rockyou.txt -s 80 -f -vV 192.168.1.115 http-get /wordpress/wp-admin/user`
+
+It worked... user: admin password:12345 
+I also searched for passwords for michael:12345, steven:password, and root:12345
+THIS MEANS NOTHING!!! I put in a random user and it also resulted in password 12345.
+
 
 5. Use searchsploit to find any known vulnerabilities associated with the programs found in Step #4.
     **Hint**: Run `searchsploit -h`
+    
+    `searchsploit -u` to update
+    `searchsploit open ssh`
+    `searchsploit wordpress`
+    
 
 6. Use the provided script `exploit.sh` to exploit this vulnerability by opening an Ncat connection to your Kali VM.
 
