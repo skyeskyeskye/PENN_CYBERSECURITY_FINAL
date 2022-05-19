@@ -82,9 +82,9 @@ I selected: `Wireshark-->Statistcs-->Endpoint` with the filter of `ip.addr==172.
  
 As a bonus, retrieve the desktop background of the Windows host.
 
-Not sure if this is correct, but I selected `file-->export-->http` and then searched for jpegs and users that looked familiar and found this image:
+Not sure if this is correct, but I selected `file-->export-->http` and then searched for jpegs and img and users from the wireshark packets that looked familiar and found this image:
 
-![bonus](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Wireshark%20Network%20Analysis/Images/desktopbackground.jpg)
+![bonus](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/commit/d87e68715ad6df2f3b610ed5be5d120f9fa0c1d6)
 
 
 ## Illegal Downloads
