@@ -57,10 +57,6 @@ In this unit, you will be using a new Web Vulns lab environment located in Windo
   - Username: `azadmin`
   - Password: `p4ssw0rd*`
 
-This is a diagram of the network and the machines that will be used in this lab:
-
-![](Images/final-project-setup.png)
-
 Open the Hyper-V Manager to access the nested machines:
 
 **ELK machine credentials:** The same ELK setup that you created in Project 1. It holds the Kibana dashboards.
@@ -83,21 +79,6 @@ Open the Hyper-V Manager to access the nested machines:
 **Target 2:** Students should ignore Target 2 until they have completed all other parts of the project.
 
 </details>  
-
-### What to Be Aware Of:
-
-It is common to encounter to experience the following issue:
-
-![](Images/error.png)
-
-* If students encounter this error, explain that Kibana needs time to finish setting up. They should wait five to ten minutes and then try again. 
-
-* If the issue is still not resolved, ask to students to log into the ELK machine using the machines credentials and run the following commands:
-
-    - `sudo su` which will allow the student to become the root user. 
-    - `docker container ls` to find the name of the running docker container. 
-    - `docker container stop <container-name>` which will stop the docker container.
-    - `docker container start <container-name>` which will start the docker container back up.
 
 * When setting alerts in Kibana to send log messages, those messages will not show in Kibana without additional configuration. Instead, the status of alerts can be viewed from the 'Watcher' page where the alerts are created.
 
