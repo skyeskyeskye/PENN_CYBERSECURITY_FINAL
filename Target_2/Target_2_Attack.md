@@ -1,7 +1,4 @@
-## Activity File: Attacking Target 2 (Optional)
-
-
-Please note, **attacking Target 2 is not required**. It is included as an additional challenge if you are interested in assessing a more complex web application. Before attempting this challenge, make sure you complete the Wireshark analysis.
+## Activity File: Attacking Target 2 
 
 Target 2 exposes the same WordPress site as Target 1, but with better security hardening. Therefore, it must be exploited differently than Target 1. 
 
