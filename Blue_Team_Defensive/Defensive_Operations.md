@@ -31,7 +31,7 @@ The following machines were identified on the network:
   - **Purpose:** VM used solely for testing alerts
   - **IP Address:** 196.168.1.105/24
 
-![Network_Diagram](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/FinalProjectDiagramJPEG.jpg)
+![Network_Diagram](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/FinalProjectDiagram.drawio.svg)
 
 ### Description of Targets
 
