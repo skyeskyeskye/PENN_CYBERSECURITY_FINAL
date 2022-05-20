@@ -50,7 +50,7 @@ Traffic to these services should be carefully monitored. To this end, we have im
 
 Alert 1 is implemented as follows:
   - **Metric**: http.response.status_code
-  - **Threshold**: above 400
+  - **Threshold**: When the count is grouped over top 5 of above 400 errors for 5 minutes
   - **Vulnerability Mitigated**: Brute Force Attempts (through SSH) that result in excessive amount of error codes
   - **Reliability**: High- however, it should be noted, while the baseline came from previous traffic experience, there can be times where there is more traffic to the webserver with codes over 400 just as a fluke and not indicative of an attack.
 
