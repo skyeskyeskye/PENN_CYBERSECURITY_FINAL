@@ -31,6 +31,8 @@ The following machines were identified on the network:
   - **Purpose:** VM used solely for testing alerts
   - **IP Address:** 196.168.1.105/24
 
+![Network_Diagram](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/FinalProjectDiagramJPEG.jpg)
+
 ### Description of Targets
 
 The target of this attack was: `Target 1` at the IP Addresss: `192.168.1.110`.
@@ -48,7 +50,7 @@ Traffic to these services should be carefully monitored. To this end, we have im
 
 Alert 1 is implemented as follows:
   - **Metric**: http.response.status_code
-  - **Threshold**: above 400
+  - **Threshold**: When the count is grouped over top 5 of above 400 errors for 5 minutes
   - **Vulnerability Mitigated**: Brute Force Attempts (through SSH) that result in excessive amount of error codes
   - **Reliability**: High- however, it should be noted, while the baseline came from previous traffic experience, there can be times where there is more traffic to the webserver with codes over 400 just as a fluke and not indicative of an attack.
 

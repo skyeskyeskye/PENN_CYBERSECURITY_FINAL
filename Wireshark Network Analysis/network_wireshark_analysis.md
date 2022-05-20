@@ -57,7 +57,7 @@ Inspect your traffic to answer the following questions:
  
 ### IP address:  172.16.4.205
  
-### MAC address: 00:59:07:b0:a4
+### MAC address: 00:59:07:b0:63:a4
  
  Source:
 ![ip src](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Wireshark%20Network%20Analysis/Images/infectedwindowshostnamemacaddressIPallinonescreenshot.jpg)
