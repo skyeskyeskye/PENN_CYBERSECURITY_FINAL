@@ -85,7 +85,7 @@ When the http.request.bytes alert is triggered:
 
 When the http.response.status_code alert is triggered:
 
-![RequestTrigger](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/commit/af66c051d91cd8ece176fd4e2d293d0b3dd68805)
+![response_status_trigger](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Screenshot%202022-05-21%20205645_KIBANA_httpErrorsTriggeredEventsDuringAttackonRedTarget.jpg)
 
 When the system.process.cpu.pct alert is triggered:
 
