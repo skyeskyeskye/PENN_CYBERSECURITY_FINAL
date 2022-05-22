@@ -61,7 +61,7 @@ Alert 2 is implemented as follows:
   - **Metric**: http.request.bytes
   - **Threshold**: when the sum over all documents is above 3500 for the last minute
   - **Vulnerability Mitigated**: SQL Injection and HTTP Request Smuggling
-  - **Reliability**: Medium- there can be triggers over the baseline because there isn't enough data collected (yet) to know what the best baseline is. For example, there might be times when there is a legitimate, work-related reason to have an increase in http.request.bytes. (Trigger might need to be adjusted higher or lower over time to be more reliable.)
+  - **Reliability**: Relatively Low- there can be triggers over the baseline because there isn't enough data collected (yet) to know what the best baseline is. When observing this metric trigger on Kibana, regardless of attack or non-attack periods of time, it triggered quite often.  There might be times when there is a legitimate, work-related reason to have an increase in http.request.bytes. (Trigger might need to be adjusted higher to be more reliable.)
 
 #### Alert 3: CPU Usage Monitor
 
@@ -71,7 +71,7 @@ Alert 3 is implemented as follows:
   - **Metric**: system.process.cpu.pct 
   - **Threshold**: when max over all documents is above 0.5 for the last 5 minutes
   - **Vulnerability Mitigated**: Denial of Service, Brute Force, Malicious Software
-  - **Reliability**: Medium- any unexpected spike in CPU usage should be assessed to verify the reason for such an increase in usage. The reason can be a nefarious attack, but other reasons can be update installations, outdated indexes that are not optimized, changes to third party applications, etc. 
+  - **Reliability**: Medium- any unexpected spike in CPU usage should be assessed to verify the reason for such an increase in usage. The reason can be a nefarious attack, but other reasons can be update installations, outdated indexes that are not optimized, changes to third party applications, etc. For example, even on just startup of the machines, the CPU usage metric triggered an alert. 
 
 This is what Kibana shows whent the index thresholds are triggered:
 
