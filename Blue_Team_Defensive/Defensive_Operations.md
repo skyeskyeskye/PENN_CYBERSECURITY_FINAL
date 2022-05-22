@@ -31,7 +31,7 @@ The following machines were identified on the network:
   - **Purpose:** VM used solely for testing alerts
   - **IP Address:** 196.168.1.105/24
 
-![Network_Diagram](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/FinalProjectDiagram.jpg)
+![Network_Diagram](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/FIXEDFinalProjectDiagram.png)
 
 ### Description of Targets
 
@@ -45,8 +45,7 @@ Traffic to these services should be carefully monitored. To this end, we have im
 
 #### Alert 1: Excessive HTTP Errors
 
-![HTTPErrorsAlert](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/ExcessiveHTTPErrors_Kibana.jpg)
-    {Note: This screenshot was taken pre-attack}
+![HTTPErrorsAlert](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Screenshot%202022-05-21%20184605_HTTP_Response_Code_Alert.jpg)
 
 Alert 1 is implemented as follows:
   - **Metric**: http.response.status_code
@@ -56,8 +55,7 @@ Alert 1 is implemented as follows:
 
 #### Alert 2: HTTP Request Size Monitor
 
-![HTTPRequestSize](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/HTTPRequestSize_Kibana.jpg)
-    {Note: This screenshot was taken pre-attack}
+![HTTPRequestSize](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Screenshot%202022-05-21%20184413_KIBANA_HTTP_Request_Bytes_Alert.jpg)
 
 Alert 2 is implemented as follows:
   - **Metric**: http.request.bytes
@@ -67,8 +65,7 @@ Alert 2 is implemented as follows:
 
 #### Alert 3: CPU Usage Monitor
 
-![CPUUsageAlert](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/CPUUsageMonitor_Kibana.jpg)
-    {Note: this screenshot was taken pre-attack}
+![CPUUsageAlert](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Screenshot%202022-05-21%20184731_KIBANA_CPU_Usage_Alert.jpg)
 
 Alert 3 is implemented as follows:
   - **Metric**: system.process.cpu.pct 
