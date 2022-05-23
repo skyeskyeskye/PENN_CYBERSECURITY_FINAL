@@ -73,19 +73,23 @@ Alert 3 is implemented as follows:
   - **Vulnerability Mitigated**: Denial of Service, Brute Force, Malicious Software
   - **Reliability**: Medium- any unexpected spike in CPU usage should be assessed to verify the reason for such an increase in usage. The reason can be a nefarious attack, but other reasons can be update installations, outdated indexes that are not optimized, changes to third party applications, etc. For example, even on just startup of the machines, the CPU usage metric triggered an alert. 
 
-This is what Kibana shows whent the index thresholds are triggered:
+This is what Kibana Watcher shows:
 
-![Kibana](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Screenshot%202022-05-17%20181351.jpg)
+![Kibana](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Screenshot%202022-05-21%20201920_KIBANA_Watcher_Alerts_triggering.jpg)
+{note: I experimented with an alert for different types of http requests, but it triggered too often to be useful}
 
-This is a closeup during the attack:
-![Kibana Close Up](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Kibana_CloseUp_Event.jpg)
+When the http.request.bytes alert is triggered:
 
-This is more information from an event during the attack where specifically the HTTP Request Size alert was triggered:
+![Kibana Close Up](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Screenshot%202022-05-21%20210200_KIBANA_HTTP_RequestSize_Triggered.jpg)
 
-![RequestTrigger](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Kibana_Closeup_requestbytes.jpg)
 
-This is more information from an event during the attack where specifically the HTTP Error alert was triggered:
-![HTTPError](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Kibana_Closeup_HTTPError.jpg)
+When the http.response.status_code alert is triggered:
+
+![response_status_trigger](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Screenshot%202022-05-21%20205645_KIBANA_httpErrorsTriggeredEventsDuringAttackonRedTarget.jpg)
+
+When the system.process.cpu.pct alert is triggered:
+
+![High CPU](https://github.com/skyeskyeskye/PENN_CYBERSECURITY_FINAL/blob/main/Blue_Team_Defensive/Images/Screenshot%202022-05-21%20205946_KIBANA_CPU_Triggered_Events.jpg)
 
 
 ### Suggestions for Going Further 
